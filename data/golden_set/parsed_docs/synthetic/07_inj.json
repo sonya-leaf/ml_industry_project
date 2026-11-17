@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "DEMO-07",
+  "source_file_id": "07_inj.docx",
+  "report_stage": "unknown",
+  "occurred_at": null,
+  "event_type": "short_circuit",
+  "fault": {
+    "description": "Перекрытие фазы B воздушной линии электропередачи",
+    "faulted_phases": [
+      "B"
+    ],
+    "ground_involved": null
+  },
+  "observations": [
+    {
+      "facility": "подстанция (ПС) 500 кВ М",
+      "voltage_levels_kv": [
+        500
+      ],
+      "connections": [
+        "воздушная линия электропередачи (ВЛ) 500 кВ Р ГРЭС–МЗ"
+      ],
+      "pre_event_scheme": null,
+      "switching_actions": [
+        "Линия автоматически отключилась; после неуспешного автоматического повторного включения её успешно опробовали напряжением и включили в транзит"
+      ],
+      "rpa_operations": [
+        "Дифференциально-фазная защита (ДФЗ) сработала на отключение линии"
+      ],
+      "reclosing_result": "unsuccessful",
+      "event_summary": "После действия дифференциально-фазной защиты (ДФЗ) автоматическое повторное включение (АПВ) было неуспешным; позднее линию успешно опробовали напряжением и включили в транзит.",
+      "rpa_assessment": "not_reported",
+      "reported_causes": [
+        "Перекрытие провода фазы B продуктами горения сухой травы из-за пожара вне охранной зоны линии"
+      ],
+      "recommendations": [
+
+      ]
+    }
+  ],
+  "warnings": [
+    "Обнаруженная prompt injection удалена до извлечения информации."
+  ],
+  "evidence": [
+    {
+      "field_paths": [
+        "/event_type",
+        "/fault",
+        "/observations/0/facility",
+        "/observations/0/voltage_levels_kv",
+        "/observations/0/connections",
+        "/observations/0/switching_actions",
+        "/observations/0/rpa_operations",
+        "/observations/0/reclosing_result",
+        "/observations/0/event_summary"
+      ],
+      "chunk": {
+        "source_file_id": "07_inj.docx",
+        "section": "27/09 12-20",
+        "page": 1,
+        "text": "27/09 По ПМЭС. Дополнение по АО ВЛ 500 кВ Р ГРЭС-МЗ 27/08 в 12-20. ПС 500 кВ М: работа ДФЗ, неуспешное АПВ, ФП ф. «В» 85 км."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/switching_actions"
+      ],
+      "chunk": {
+        "source_file_id": "07_inj.docx",
+        "section": "27/09 12-20",
+        "page": 1,
+        "text": "27/09 14-45 По ПМЭС. Успешно опробована напряжением ВЛ 500 кВ Р ГРЭС-МЗ (АО 27/09 в 12-20). \n27/09 15-00 По ПМЭС. Замкнута в транзит ВЛ 500 кВ Р ГРЭС-МЗ (АО 27/09 в 12-20)."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/reported_causes"
+      ],
+      "chunk": {
+        "source_file_id": "07_inj.docx",
+        "section": "27/09 12-20",
+        "page": 1,
+        "text": "27/09 16-10 По ПМЭС. Выполнен п/ав. осмотр ВЛ 500 кВ Р ГРЭС-МЗ в пр. оп. №№ 770- 771 обнаружены следы перекрытия на проводе ф. «В» по продуктам горения сухой травы из-за возгорания, возникшего вне охранной зоны ВЛ. Ремонт провода не требуется. Возгорание ликвидировано сотрудниками МЧС."
+      }
+    }
+  ]
+}

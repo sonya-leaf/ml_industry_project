@@ -1,0 +1,27 @@
+# Project paths, versions, eval settings and model pricing. Non-secret only; secrets go in .env.
+
+paths:
+  data: data
+  schemas: schemas
+  out: out
+  reports: reports
+
+versions:
+  schema: "1.0"      # IncidentRecord / QAResponse schema version
+  dict: v1           # abbreviations.csv version
+
+# eval settings (extend as needed)
+eval:
+  top_k: 5
+
+# Model pricing (USD per 1M tokens) for cost reporting in logs/trace.py.
+# Keys are the exact model strings from llm.py (DEFAULT_MODEL) and llm_judge.py (JUDGE_MODEL).
+# Fill in real provider prices; a local Ollama judge is effectively free. A model without an
+# entry reports cost = 0.
+pricing:
+  "qwen3.8-27b":
+    per_1m_in: 0.0
+    per_1m_out: 0.0
+  "mistral:7b-instruct-v0.3-q5_K_M":
+    per_1m_in: 0.0
+    per_1m_out: 0.0

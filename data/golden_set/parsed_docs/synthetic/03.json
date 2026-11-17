@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "DEMO-03",
+  "source_file_id": "03.docx",
+  "report_stage": "final",
+  "occurred_at": null,
+  "event_type": "abnormal_operation_without_short_circuit",
+  "fault": null,
+  "observations": [
+    {
+      "facility": "подстанция (ПС) 500 кВ Мг",
+      "voltage_levels_kv": [
+        500,
+        220
+      ],
+      "connections": [
+        "кабельно-воздушная линия (КВЛ) 220 кВ теплоэлектроцентраль №18 (ТЭЦ-18)–Мг №10"
+      ],
+      "pre_event_scheme": null,
+      "switching_actions": [
+        "Аварийно отключились выключатели В283 и В280"
+      ],
+      "rpa_operations": [
+        "Первый и второй комплекты дифференциальной защиты линии (ДЗЛ) и комплекты ступенчатых защит (КСЗ) приняли команды телеотключения"
+      ],
+      "reclosing_result": "not_attempted",
+      "event_summary": "Линия отключилась после приёма внешних команд телеотключения двумя комплектами защит.",
+      "rpa_assessment": "incorrect",
+      "reported_causes": [
+        "Внешнее воздействие защит ТГ-10 на теплоэлектроцентрали №18 (ТЭЦ-18) на первый и второй комплекты защит линии"
+      ],
+      "recommendations": [
+
+      ]
+    },
+    {
+      "facility": "теплоэлектроцентраль №18 (ТЭЦ-18)",
+      "voltage_levels_kv": [
+        220
+      ],
+      "connections": [
+        "кабельно-воздушная линия (КВЛ) 220 кВ теплоэлектроцентраль №18 (ТЭЦ-18)–Мг №10"
+      ],
+      "pre_event_scheme": null,
+      "switching_actions": [
+
+      ],
+      "rpa_operations": [
+        "Первый и второй комплекты дифференциальной защиты линии (ДЗЛ) и комплекты ступенчатых защит (КСЗ) передали команды телеотключения"
+      ],
+      "reclosing_result": "not_attempted",
+      "event_summary": "Защиты теплоэлектроцентрали №18 (ТЭЦ-18) сформировали внешние команды телеотключения, приведшие к отключению линии.",
+      "rpa_assessment": "incorrect",
+      "reported_causes": [
+        "Внешнее воздействие защит ТГ-10 на теплоэлектроцентрали №18 (ТЭЦ-18) на первый и второй комплекты защит линии"
+      ],
+      "recommendations": [
+
+      ]
+    }
+  ],
+  "warnings": [
+
+  ],
+  "evidence": [
+    {
+      "field_paths": [
+        "/report_stage"
+      ],
+      "chunk": {
+        "source_file_id": "03.docx",
+        "section": "Вид справки",
+        "page": 1,
+        "text": "Заверщенная"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/facility"
+      ],
+      "chunk": {
+        "source_file_id": "03.docx",
+        "section": "Сводная справка о работе устройств РЗА.",
+        "page": 1,
+        "text": "ПС 500 кВ Мг"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/1/facility"
+      ],
+      "chunk": {
+        "source_file_id": "03.docx",
+        "section": "Сводная справка о работе устройств РЗА.",
+        "page": 1,
+        "text": "ТЭЦ-18"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/connections",
+        "/observations/1/connections",
+        "/observations/0/voltage_levels_kv",
+        "/observations/1/voltage_levels_kv"
+      ],
+      "chunk": {
+        "source_file_id": "03.docx",
+        "section": "Присоединение",
+        "page": 1,
+        "text": "КВЛ 220 кВ ТЭЦ-18 – Мг № 10"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/switching_actions"
+      ],
+      "chunk": {
+        "source_file_id": "03.docx",
+        "section": "Описание схемы ПС на момент ТН",
+        "page": 1,
+        "text": "в 10:30:00 аварийно отключаются В283 и В280"
+      }
+    },
+    {
+      "field_paths": [
+        "/event_type",
+        "/observations/0/rpa_operations",
+        "/observations/1/rpa_operations",
+        "/observations/0/event_summary",
+        "/observations/1/event_summary"
+      ],
+      "chunk": {
+        "source_file_id": "03.docx",
+        "section": "Результат анализа осциллограмм и имеющиеся уставки сработавших устройств РЗА",
+        "page": 1,
+        "text": "Прием ТО ПРМ ДЗЛ, КСЗ 1 комплект КВЛ 220 кВ ТЭЦ-18 – Мг № 10\n\nПрием ТО ПРМ ДЗЛ, КСЗ 2 комплект КВЛ 220 кВ ТЭЦ-18 – Мг № 10"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/rpa_assessment",
+        "/observations/1/rpa_assessment"
+      ],
+      "chunk": {
+        "source_file_id": "03.docx",
+        "section": "Оценка действия устройств РЗА",
+        "page": 1,
+        "text": "ТО ПРМ ДЗЛ, КСЗ 1 комплект КВЛ 220 кВ ТЭЦ-18 – Мг № 10 – допущенная неправильная работа\n\nТО ПРМ ДЗЛ, КСЗ 2 комплект КВЛ 220 кВ ТЭЦ-18 – Мг № 10 – допущенная неправильная работа\n\nТО ПРД ДЗЛ, КСЗ 1 комплект КВЛ 220 кВ ТЭЦ-18 – Мг № 10 (RED670) – допущенная неправильная работа\n\nТО ПРД ДЗЛ, КСЗ 2 комплект КВЛ 220 кВ ТЭЦ-18 – Мг № 10 (RED670) – допущенная неправильная работа"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/reported_causes",
+        "/observations/1/reported_causes"
+      ],
+      "chunk": {
+        "source_file_id": "03.docx",
+        "section": "Причина неправильной работы устройства РЗА",
+        "page": 1,
+        "text": "Причиной отключения явился прием команды телеотключения от внешнего воздействия в 1 и 2 комплекты ДЗЛ, КСЗ  КВЛ 220 кВ ТЭЦ-18 – Мг № 10 (RED670) от защит ТГ-10  на ТЭЦ -18"
+      }
+    }
+  ]
+}

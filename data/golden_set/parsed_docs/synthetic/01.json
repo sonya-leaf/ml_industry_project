@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "DEMO-01",
+  "source_file_id": "01.docx",
+  "report_stage": "final",
+  "occurred_at": null,
+  "event_type": "short_circuit",
+  "fault": {
+    "description": "Короткое замыкание фазы C на землю",
+    "faulted_phases": [
+      "C"
+    ],
+    "ground_involved": true
+  },
+  "observations": [
+    {
+      "facility": "подстанция (ПС) 500 кВ П",
+      "voltage_levels_kv": [
+        500,
+        220
+      ],
+      "connections": [
+        "воздушная линия электропередачи (ВЛ) 500 кВ П–Н"
+      ],
+      "pre_event_scheme": "Схема по сторонам 500 и 220 кВ фиксированная; автотрансформатор (АТ) №3 и выключатель (ВВ) 500 кВ В1 «Н» находились в ремонте; воздушная линия электропередачи (ВЛ) 500 кВ Н–П была отключена по заявке",
+      "switching_actions": [
+        "При включении под напряжение выключателя (ВВ) 500 кВ В2 возникло короткое замыкание; выключатель отключился"
+      ],
+      "rpa_operations": [
+        "Дифференциально-фазная защита (ДФЗ-654), устройство 7SA513 и передатчик АКА-16 сработали на отключение и передачу команд телеускорения"
+      ],
+      "reclosing_result": "not_attempted",
+      "event_summary": "При включении выключателя (ВВ) В2 произошло короткое замыкание фазы C на землю; защиты отключили повреждение, автоматическое повторное включение (АПВ) было выведено.",
+      "rpa_assessment": "correct",
+      "reported_causes": [
+
+      ],
+      "recommendations": [
+
+      ]
+    }
+  ],
+  "warnings": [
+
+  ],
+  "evidence": [
+    {
+      "field_paths": [
+        "/report_stage"
+      ],
+      "chunk": {
+        "source_file_id": "01.docx",
+        "section": "Вид справки",
+        "page": 1,
+        "text": "Завершенная"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/connections"
+      ],
+      "chunk": {
+        "source_file_id": "01.docx",
+        "section": "Присоединение",
+        "page": 1,
+        "text": "ВЛ-500 кВ П-Н"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/facility",
+        "/observations/0/voltage_levels_kv",
+        "/observations/0/pre_event_scheme"
+      ],
+      "chunk": {
+        "source_file_id": "01.docx",
+        "section": "Описание схемы ПС на момент ТН",
+        "page": 1,
+        "text": "Схема ПС 500кВ П по сторонам 500-220кВ -фиксированная. АТ№3 – в длительном ремонте. Собственный ВВ-500кВ В1 «Н» в среднем ремонте. ВЛ 500 кВ Н-П отключена по заявке"
+      }
+    },
+    {
+      "field_paths": [
+        "/event_type",
+        "/fault",
+        "/observations/0/switching_actions",
+        "/observations/0/rpa_operations",
+        "/observations/0/reclosing_result",
+        "/observations/0/event_summary"
+      ],
+      "chunk": {
+        "source_file_id": "01.docx",
+        "section": "Результат анализа \nосциллограмм и имеющиеся уставки сработавших устройств РЗА",
+        "page": 1,
+        "text": "При включении под напряжением ВВ 500 кВ В2 возникло короткое замыкание фазы «С» на землю ВЛ-500кВ «П-Н», которое было ликвидировано действием основной защиты  ДФЗ-654, 7SA513 с последующей посылкой команд ТУ по АКА-16 ПРД 40-44 кГц со стороны ПС 500кВ П. АПВ выведено."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/rpa_assessment"
+      ],
+      "chunk": {
+        "source_file_id": "01.docx",
+        "section": "Оценка действия устройств РЗА",
+        "page": 1,
+        "text": "Работа ДФЗ-654 – правильная.  Работа 7SA513 – правильная. Работа АКА-16 «К» ПРД  – правильная."
+      }
+    }
+  ]
+}

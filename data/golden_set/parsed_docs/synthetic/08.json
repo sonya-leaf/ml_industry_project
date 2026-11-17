@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "DEMO-08",
+  "source_file_id": "08.docx",
+  "report_stage": "final",
+  "occurred_at": "2025-05-17T13:20:00",
+  "event_type": "short_circuit",
+  "fault": {
+    "description": "Однофазное короткое замыкание фазы C из-за обрыва провода",
+    "faulted_phases": [
+      "C"
+    ],
+    "ground_involved": null
+  },
+  "observations": [
+    {
+      "facility": "подстанция (ПС) 220 кВ Корская",
+      "voltage_levels_kv": [
+        220,
+        110
+      ],
+      "connections": [
+        "воздушная линия электропередачи (ВЛ) 220 кВ ЛоТЭС–Корская №2"
+      ],
+      "pre_event_scheme": "В работе находились две линии ЛоТЭС, автотрансформаторы (АТ) №1 и №2 и две системы шин 110 кВ; схема распределительного устройства 110 кВ фиксированная",
+      "switching_actions": [
+        "Отключился выключатель 110 кВ автотрансформатора (АТ) №2"
+      ],
+      "rpa_operations": [
+        "Дифференциально-фазная защита (ДФЗ) L-031 «Диамант» сработала правильно на отключение"
+      ],
+      "reclosing_result": "unsuccessful",
+      "event_summary": "При однофазном коротком замыкании фазы C дифференциально-фазная защита (ДФЗ) отключила выключатель; автоматическое повторное включение (АПВ) через 8,167 секунды было неуспешным.",
+      "rpa_assessment": "correct",
+      "reported_causes": [
+        "Обрыв провода воздушной линии электропередачи"
+      ],
+      "recommendations": [
+
+      ]
+    }
+  ],
+  "warnings": [
+
+  ],
+  "evidence": [
+    {
+      "field_paths": [
+        "/occurred_at",
+        "/report_stage",
+        "/observations/0/facility",
+        "/observations/0/voltage_levels_kv"
+      ],
+      "chunk": {
+        "source_file_id": "08.docx",
+        "section": "Справка РЗА ПС 220 кВ Корская",
+        "page": 1,
+        "text": "Дата 2025.05.17 в 13 часов 20 мин.\n\nВид справки\nЗавершенная"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/connections"
+      ],
+      "chunk": {
+        "source_file_id": "08.docx",
+        "section": "Присоединение",
+        "page": 1,
+        "text": "ВЛ-220 кВ Ло ТЭС-Корская №2"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/pre_event_scheme"
+      ],
+      "chunk": {
+        "source_file_id": "08.docx",
+        "section": "Описание схемы ПС на момент ТН",
+        "page": 1,
+        "text": "В работе ВЛ 220кВ ЛоТЭС№1,2, АТ-1.2, 1,2 система шин 110кВ. Схема РУ-110 кВ фиксированная."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/switching_actions"
+      ],
+      "chunk": {
+        "source_file_id": "08.docx",
+        "section": "Отключившееся /включившиеся коммутационные аппараты",
+        "page": 1,
+        "text": "ЭВ-110кВ «АТ-2»."
+      }
+    },
+    {
+      "field_paths": [
+        "/event_type",
+        "/fault",
+        "/observations/0/rpa_operations",
+        "/observations/0/reclosing_result",
+        "/observations/0/event_summary",
+        "/observations/0/reported_causes"
+      ],
+      "chunk": {
+        "source_file_id": "08.docx",
+        "section": "Результат анализа \nосциллограмм и имеющиеся уставки сработавших устройств РЗА",
+        "page": 1,
+        "text": "17.05.2025 в 13-20 при однофазном КЗ фазы «С» действием ДФЗ L-031 «Диамант» отключился ЭВ-110 кВ АТ-2. Спустя 8,167с. АПВ- неуспешное.  Причина – обрыв провода на ВЛ."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/rpa_assessment"
+      ],
+      "chunk": {
+        "source_file_id": "08.docx",
+        "section": "Оценка действия устройств РЗА",
+        "page": 1,
+        "text": "Работа ДФЗ L-031 «Диамант» -правильная."
+      }
+    }
+  ]
+}

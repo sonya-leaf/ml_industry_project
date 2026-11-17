@@ -1,0 +1,32 @@
+# Secrets
+.env
+
+# Agents & IDE
+.nessy/
+.vscode/
+
+# Confidential source data — never commit real reports
+initial_data/
+
+# Real reports are confidential; commit only gold parsed JSONs + synthetic + abbreviations
+data/golden_set/raw_docs/parsing/
+data/golden_set/raw_docs/qa/
+data/golden_set/parsed_docs/parsing/
+data/golden_set/parsed_docs/qa/
+data/golden_set/questions/qa.csv
+data/working_set/raw_docs/
+
+# Generated run artifacts (log files, traces, predictions, indexes)
+out/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS
+.DS_Store

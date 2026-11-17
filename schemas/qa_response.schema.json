@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "qa_response.schema.json",
+  "title": "QAResponse v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "answer", "citations"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "status": {"enum": ["answered", "insufficient_evidence"]},
+    "answer": {"type": "string"},
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["incident_id", "evidence"],
+        "properties": {
+          "incident_id": {"type": "string", "minLength": 1},
+          "evidence": {"$ref": "incident_record.schema.json#/$defs/evidence"}
+        }
+      }
+    }
+  },
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "insufficient_evidence"}}}, "then": {"properties": {"citations": {"maxItems": 0}}}},
+    {"if": {"properties": {"status": {"const": "answered"}}}, "then": {"properties": {"answer": {"minLength": 1}}}}
+  ]
+}

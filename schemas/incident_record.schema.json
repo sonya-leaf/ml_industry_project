@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "incident_record.schema.json",
+  "title": "IncidentRecord v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "incident_id", "source_file_id", "report_stage", "occurred_at", "event_type", "fault", "observations", "warnings", "evidence"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "incident_id": {"type": "string", "minLength": 1},
+    "source_file_id": {"type": "string", "minLength": 1},
+    "report_stage": {"enum": ["primary", "clarified", "final", "unknown"]},
+    "occurred_at": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$"}
+      ]
+    },
+    "event_type": {"enum": ["short_circuit", "abnormal_operation_without_short_circuit", "other", "unknown"]},
+    "fault": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/fault"}]},
+    "observations": {"type": "array", "items": {"$ref": "#/$defs/observation"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}}
+  },
+  "$defs": {
+    "fault": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description", "faulted_phases", "ground_involved"],
+      "properties": {
+        "description": {"type": ["string", "null"]},
+        "faulted_phases": {"type": "array", "uniqueItems": true, "items": {"enum": ["A", "B", "C"]}},
+        "ground_involved": {"type": ["boolean", "null"]}
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["facility", "voltage_levels_kv", "connections", "pre_event_scheme", "switching_actions", "rpa_operations", "reclosing_result", "event_summary", "rpa_assessment", "reported_causes", "recommendations"],
+      "properties": {
+        "facility": {"type": ["string", "null"]},
+        "voltage_levels_kv": {"type": "array", "items": {"type": "number"}},
+        "connections": {"type": "array", "items": {"type": "string"}},
+        "pre_event_scheme": {"type": ["string", "null"]},
+        "switching_actions": {"type": "array", "items": {"type": "string"}},
+        "rpa_operations": {"type": "array", "items": {"type": "string"}},
+        "reclosing_result": {"enum": ["successful", "unsuccessful", "mixed", "not_attempted", "unknown"]},
+        "event_summary": {"type": ["string", "null"]},
+        "rpa_assessment": {"enum": ["correct", "incorrect", "mixed", "not_reported"]},
+        "reported_causes": {"type": "array", "items": {"type": "string"}},
+        "recommendations": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_paths", "chunk"],
+      "properties": {
+        "field_paths": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^/"}},
+        "chunk": {"$ref": "#/$defs/chunk"}
+      }
+    },
+    "chunk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_file_id", "section", "page", "text"],
+      "properties": {
+        "source_file_id": {"type": "string", "minLength": 1},
+        "section": {"type": "string", "minLength": 1},
+        "page": {"type": ["integer", "null"], "minimum": 1},
+        "text": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

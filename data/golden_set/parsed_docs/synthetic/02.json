@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "DEMO-02",
+  "source_file_id": "02.docx",
+  "report_stage": "unknown",
+  "occurred_at": "2021-11-11T12:10:00",
+  "event_type": "short_circuit",
+  "fault": {
+    "description": "Повреждение фазы C воздушной линии электропередачи",
+    "faulted_phases": [
+      "C"
+    ],
+    "ground_involved": null
+  },
+  "observations": [
+    {
+      "facility": null,
+      "voltage_levels_kv": [
+        750
+      ],
+      "connections": [
+        "воздушная линия электропередачи (ВЛ) 750 кВ атомная электростанция (АЭС)–Н"
+      ],
+      "pre_event_scheme": null,
+      "switching_actions": [
+        "Линия отключилась с обеих сторон; повторное включение со стороны подстанции (ПС) 750 кВ Н было неуспешным; линию вывели в ремонт"
+      ],
+      "rpa_operations": [
+        "Направленная дистанционная защита (НДЗ) сработала с обеих сторон"
+      ],
+      "reclosing_result": "unsuccessful",
+      "event_summary": "Линия отключилась с обеих сторон; однофазное автоматическое повторное включение фазы C и последующее повторное включение были неуспешными.",
+      "rpa_assessment": "not_reported",
+      "reported_causes": [
+        "Повреждение разрядника на высокочастотном заградителе фазы C",
+        "Обрыв проводов фаз A и C вследствие действий третьих лиц"
+      ],
+      "recommendations": [
+        "Вывести линию в ремонт для замены разрядника на высокочастотном заградителе фазы C"
+      ]
+    }
+  ],
+  "warnings": [
+
+  ],
+  "evidence": [
+    {
+      "field_paths": [
+        "/occurred_at",
+        "/event_type",
+        "/fault",
+        "/observations/0/voltage_levels_kv",
+        "/observations/0/connections",
+        "/observations/0/switching_actions",
+        "/observations/0/rpa_operations",
+        "/observations/0/reclosing_result",
+        "/observations/0/event_summary"
+      ],
+      "chunk": {
+        "source_file_id": "02.docx",
+        "section": "АВАРИЙНЫЕ ОТКЛЮЧЕНИЯ, ДЕФЕКТЫ ОБОРУДОВАНИЯ И УСТРОЙСТВ РЗА",
+        "page": 1,
+        "text": "11.11.21 12-10\nПМЭС. МЭС С-З. Автоматическое отключение ВЛ 750 кВ АЭС-Н. Сработала НДЗ с обеих сторон, ОАПВ ф. «С» неуспешное. ИМФ ф. «С» 179,5 км от ПС 750 кВ Н - участок ПМЭС."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/switching_actions",
+        "/observations/0/reclosing_result"
+      ],
+      "chunk": {
+        "source_file_id": "02.docx",
+        "section": "АВАРИЙНЫЕ ОТКЛЮЧЕНИЯ, ДЕФЕКТЫ ОБОРУДОВАНИЯ И УСТРОЙСТВ РЗА",
+        "page": 1,
+        "text": "12-20\nНеуспешное РПВ ВЛ со стороны ПС 750 кВ Н. Работа НДЗ; ИМФ ф. «С» 160 км."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/reported_causes",
+        "/observations/0/recommendations"
+      ],
+      "chunk": {
+        "source_file_id": "02.docx",
+        "section": "АВАРИЙНЫЕ ОТКЛЮЧЕНИЯ, ДЕФЕКТЫ ОБОРУДОВАНИЯ И УСТРОЙСТВ РЗА",
+        "page": 1,
+        "text": "15-00\nАЭС: при повторном осмотре с биноклем оборудования ВЛ 750 кВ АЭС-Н обнаружено повреждение разрядника на корзине ВЧЗ ф. «С» ВЛ на АЭС. Требуется вывод ВЛ в ремонт."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/switching_actions"
+      ],
+      "chunk": {
+        "source_file_id": "02.docx",
+        "section": "АВАРИЙНЫЕ ОТКЛЮЧЕНИЯ, ДЕФЕКТЫ ОБОРУДОВАНИЯ И УСТРОЙСТВ РЗА",
+        "page": 1,
+        "text": "17-00\nВыведена в ремонт ВЛ 750 кВ АЭС-Н до 17- 00 15/11, АВ заявка АЭС для замены разрядника на ВЧЗ ф. «С»."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/reported_causes"
+      ],
+      "chunk": {
+        "source_file_id": "02.docx",
+        "section": "АВАРИЙНЫЕ ОТКЛЮЧЕНИЯ, ДЕФЕКТЫ ОБОРУДОВАНИЯ И УСТРОЙСТВ РЗА",
+        "page": 1,
+        "text": "18/11 11-00 ПМЭС. При осмотре ВЛ 750 кВ АЭС-Н (АО 11/11 в 12-10) в пр. оп. №№ 55-56 обнаружен обрыв проводов (одного из пяти в фазе) ф. А, С действиями сторонних лиц, провода касаются земли. ВЛ выводится в ремонт."
+      }
+    }
+  ]
+}

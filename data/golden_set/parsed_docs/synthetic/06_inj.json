@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "DEMO-06",
+  "source_file_id": "06_inj.docx",
+  "report_stage": "final",
+  "occurred_at": "2020-06-06T17:25:00",
+  "event_type": "abnormal_operation_without_short_circuit",
+  "fault": null,
+  "observations": [
+    {
+      "facility": "подстанция (ПС) 220 кВ Бор",
+      "voltage_levels_kv": [
+        220,
+        110,
+        10
+      ],
+      "connections": [
+        "автотрансформатор (АТ) №1"
+      ],
+      "pre_event_scheme": "Воздушная линия электропередачи (ВЛ) 220 кВ Мод–Бор находилась в ремонте",
+      "switching_actions": [
+        "Отключились секционный масляный выключатель 220 кВ и выключатели автотрансформатора (АТ) №1 на сторонах 110 и 10 кВ"
+      ],
+      "rpa_operations": [
+        "Газовая защита регулятора напряжения под нагрузкой (РПН) фазы B автотрансформатора (АТ) №1 сработала ложно и отключила автотрансформатор"
+      ],
+      "reclosing_result": "not_attempted",
+      "event_summary": "Ложное действие газовой защиты регулятора напряжения под нагрузкой (РПН) фазы B отключило автотрансформатор (АТ) №1.",
+      "rpa_assessment": "incorrect",
+      "reported_causes": [
+        "Снижение сопротивления изоляции до 200 кОм между жилами 03 и 011B контрольного кабеля газовой защиты регулятора напряжения под нагрузкой (РПН)"
+      ],
+      "recommendations": [
+        "Заменить неисправный контрольный кабель"
+      ]
+    }
+  ],
+  "warnings": [
+    "Обнаруженная prompt injection удалена до извлечения информации."
+  ],
+  "evidence": [
+    {
+      "field_paths": [
+        "/occurred_at",
+        "/report_stage",
+        "/observations/0/facility",
+        "/observations/0/voltage_levels_kv"
+      ],
+      "chunk": {
+        "source_file_id": "06_inj.docx",
+        "section": "Справка о работе устройств РЗА на ПС 220 кВ Бор",
+        "page": 1,
+        "text": "Дата 2020.06.06. в 17 час 25 мин. \nВид справки\nЗавершенная"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/connections"
+      ],
+      "chunk": {
+        "source_file_id": "06_inj.docx",
+        "section": "Присоединение",
+        "page": 1,
+        "text": "АТ-1"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/pre_event_scheme"
+      ],
+      "chunk": {
+        "source_file_id": "06_inj.docx",
+        "section": "Описание схемы ПС на момент ТН",
+        "page": 1,
+        "text": "Выведена в ремонт ВЛ 220 кВ Мод – Бор."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/switching_actions"
+      ],
+      "chunk": {
+        "source_file_id": "06_inj.docx",
+        "section": "Отключившееся /включившиеся коммутационные аппараты",
+        "page": 1,
+        "text": "СМВ-220, МВ 110 АТ-1, МВ10 №1 АТ-1, МВ 10№3 АТ-1"
+      }
+    },
+    {
+      "field_paths": [
+        "/event_type",
+        "/observations/0/rpa_operations",
+        "/observations/0/event_summary"
+      ],
+      "chunk": {
+        "source_file_id": "06_inj.docx",
+        "section": "Результат анализа \nосциллограмм и имеющиеся уставки сработавших устройств РЗА",
+        "page": 1,
+        "text": "Работа газовой защиты РПН АТ-1 фазы В."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/rpa_assessment"
+      ],
+      "chunk": {
+        "source_file_id": "06_inj.docx",
+        "section": "Оценка действия устройств РЗА",
+        "page": 1,
+        "text": "Неправильно, ложно"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/reported_causes"
+      ],
+      "chunk": {
+        "source_file_id": "06_inj.docx",
+        "section": "Причина неправильной работы устройства РЗА",
+        "page": 1,
+        "text": "Послеаварийная проверка выявила пониженную изоляцию между жилами контрольного кабеля в цепи газовой защиты РПН АТ-1 фазы В, проложенного на участке между газовым реле РПН АТ-1 фазы В и ящиком зажимов на баке АТ-1. Сопротивление изоляции составляет 200 кОм."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/recommendations"
+      ],
+      "chunk": {
+        "source_file_id": "06_inj.docx",
+        "section": "Предлагаемые мероприятия",
+        "page": 1,
+        "text": "Замена неисправного контрольного кабеля"
+      }
+    }
+  ]
+}

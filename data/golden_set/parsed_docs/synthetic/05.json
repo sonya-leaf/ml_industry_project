@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "incident_id": "DEMO-05",
+  "source_file_id": "05.docx",
+  "report_stage": "final",
+  "occurred_at": "2022-12-10T14:45:00",
+  "event_type": "short_circuit",
+  "fault": {
+    "description": "Однофазное короткое замыкание фазы A на землю",
+    "faulted_phases": [
+      "A"
+    ],
+    "ground_involved": true
+  },
+  "observations": [
+    {
+      "facility": "подстанция (ПС) 220 кВ Росы",
+      "voltage_levels_kv": [
+        220,
+        110,
+        35
+      ],
+      "connections": [
+        "автотрансформатор (АТ) №2"
+      ],
+      "pre_event_scheme": "Открытое распределительное устройство (ОРУ) 220 кВ работало по фиксированной схеме",
+      "switching_actions": [
+        "Отключились выключатели автотрансформатора (АТ) №2 на сторонах 220, 110 и 35 кВ; шинный секционный выключатель 35 кВ успешно включился от автоматического ввода резерва (АВР)"
+      ],
+      "rpa_operations": [
+        "Дифференциальная защита трансформатора (ДЗТ), дополнительная максимальная токовая защита ошиновки 220 кВ и автоматический ввод резерва (АВР) 35 кВ сработали правильно"
+      ],
+      "reclosing_result": "successful",
+      "event_summary": "Из-за приближения защитной сетки к ошиновке 220 кВ произошло короткое замыкание фазы A на землю и отключение автотрансформатора (АТ) №2; автоматический ввод резерва (АВР) 35 кВ был успешным.",
+      "rpa_assessment": "correct",
+      "reported_causes": [
+        "Недопустимо малое расстояние между защитной сеткой и ошиновкой 220 кВ автотрансформатора (АТ) №2"
+      ],
+      "recommendations": [
+
+      ]
+    }
+  ],
+  "warnings": [
+
+  ],
+  "evidence": [
+    {
+      "field_paths": [
+        "/occurred_at",
+        "/report_stage",
+        "/observations/0/facility",
+        "/observations/0/voltage_levels_kv"
+      ],
+      "chunk": {
+        "source_file_id": "05.docx",
+        "section": "Справка о работе устройств РЗА \nна ПС 220 кВ Росы.",
+        "page": 1,
+        "text": "Дата 10.12.2022 время 14:45:00.\n\nВид справки\nЗавершенная"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/connections"
+      ],
+      "chunk": {
+        "source_file_id": "05.docx",
+        "section": "Присоединение",
+        "page": 1,
+        "text": "АТ-2"
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/pre_event_scheme"
+      ],
+      "chunk": {
+        "source_file_id": "05.docx",
+        "section": "Описание схемы ПС на момент ТН",
+        "page": 1,
+        "text": "ОРУ 220кВ - схема фиксированная."
+      }
+    },
+    {
+      "field_paths": [
+        "/event_type",
+        "/fault",
+        "/observations/0/switching_actions",
+        "/observations/0/reclosing_result",
+        "/observations/0/event_summary",
+        "/observations/0/reported_causes"
+      ],
+      "chunk": {
+        "source_file_id": "05.docx",
+        "section": "Результат анализа\nосциллограмм и имеющиеся уставки сработавших устройств РЗА",
+        "page": 1,
+        "text": "Общая оценка работы устройств РЗА: Правильно\nВид короткого замыкания: Однофазное короткое замыкание на землю\nПоврежденная фаза: A\nОписание события: \nИз-за приближения на недопустимое расстояние защитной сетки  к ошиновке ст.220кВ АТ-2  произошло автоматическое отключение ВВ-220, МВ-35, ВВ-110 АТ-2. АВР ШСМВ-35кВ-успешно."
+      }
+    },
+    {
+      "field_paths": [
+        "/observations/0/rpa_operations",
+        "/observations/0/rpa_assessment"
+      ],
+      "chunk": {
+        "source_file_id": "05.docx",
+        "section": "Оценка действия устройств РЗА",
+        "page": 1,
+        "text": "Диф.защита АТ-2\nДЗТ\nПравильно\nПравильно\nДоп. МТЗ ошиновки 220кВ АТ-2\nМТЗ 1 ступень\nПравильно\nПравильно\nАВР ШСМВ-35кВ\nАВР\nПравильно\nПравильно"
+      }
+    }
+  ]
+}
